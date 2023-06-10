@@ -1,0 +1,121 @@
+@import url(../variables/variables.css);
+
+.nav {
+  font-family: 'Rajdhani';
+  background: var(--primaryColor);
+  width: 100%;
+  height: calc(100px + 1em); /*Nav magasság beállítás (az "em"-t kell változtatni méret növeléshez/csökkentéshez)*/
+  display: grid;
+  grid-template-columns: 40% repeat(var(--navItems), calc(60% / var(--navItems))); /*<-- A %-ok változtatásával megváltozik a nav-brand és nav-items közötti arány (több mint 4 nav-item esetén ajánlott)*/
+  grid-template-rows: repeat(1, 100%);
+  justify-items: center;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 0.2em solid var(--secondaryColor);
+  box-sizing: border-box;
+}
+.nav a {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--secondaryColor);
+  font-size: 1.5rem; /*Nav betűméret bellítása*/
+  word-wrap: break-word;
+}
+.nav .nav-brand:nth-child(2) {
+  display: grid;
+  font-family: 'Pacifico';
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 100%;
+  height: 90%;
+  width: 100%;
+  border-right: 0.2em solid var(--secondaryColor);
+}
+.nav .nav-brand:nth-child(2) a { /*Nav brand beállításai*/
+  display: inline;
+  height: -moz-min-content;
+  height: min-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto 0 auto 4em;
+  transition: letter-spacing 0.5s;
+}
+
+.nav .nav-brand:nth-child(2) a:hover{
+  letter-spacing: 0.1rem;
+}
+
+.nav .nav-brand:nth-child(2) img { /*Nav logo beállításai*/
+  width: auto;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-left: 1.5rem;
+}
+
+.nav-item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s, border-bottom 0.1s;
+}
+.nav-item:hover, .nav-item:focus {
+  border-bottom: 0.2em solid var(--secondaryColor);
+  box-shadow: 0 -8em 5em -12em var(--secondaryColor) inset;
+}
+
+.nav-logo {
+  transform: translateY(-100vh);
+  height: -moz-fit-content;
+  height: fit-content;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2vh;
+  right: 1em;
+  cursor: pointer;
+}
+.nav-logo div {
+  width: 5em;
+  height: 0.8em;
+  background-color: white;
+  box-shadow: 0.5vw 0.5vw 10px var(--shadowColor);
+}
+
+@keyframes brand-logo {
+  0%{filter: hue-rotate(0deg);}
+  100%{filter: hue-rotate(360deg);}
+}
+
+@media screen and (1024px >= width) {
+  .nav {
+    grid-template-columns: repeat(1, 100%);
+    transition: height 0.5s;
+  }
+  .nav-item {
+    width: 70%;
+    transform: translateY(-100vh);
+  }
+  .nav-brand {
+    width: 100%;
+    transform: translateY(-100vh);
+    display: none;
+    position: absolute;
+  }
+  .nav-logo {
+    transform: translateY(0);
+    z-index: 1;
+  }
+  .show {
+    height: 50vh;
+    grid-template-rows: repeat(5, 20%);
+  }
+  .show .nav-item {
+    transform: translateY(0);
+  }
+}/*# sourceMappingURL=navbar.css.map */

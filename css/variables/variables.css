@@ -1,0 +1,7 @@
+@charset "UTF-8";
+:root {
+  --primaryColor: rgb(0, 0, 0); /*Elsődleges szín*/
+  --secondaryColor: rgb(255, 255, 255); /*Másodlagos szín*/
+  --shadowColor: rgb(0, 0, 0); /*Árnyék színe*/
+  --navItems: 4; /*Nav opciók száma*/
+}/*# sourceMappingURL=variables.css.map */

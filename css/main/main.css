@@ -31,4 +31,5 @@ body::-webkit-scrollbar, html::-webkit-scrollbar {
 #contentbox {
   background: url(../../assets/img/background_main.png) no-repeat;
   background-size: cover;
+  background-position: center;
 }/*# sourceMappingURL=main.css.map */
